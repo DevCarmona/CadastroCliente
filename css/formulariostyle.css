@@ -8,6 +8,22 @@ body {
     background-attachment: fixed;
 }
 
+.botao-voltar {
+    background-color: rgb(187, 143, 33);
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.botao-voltar:hover {
+    background-color: rgb(99, 72, 5);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
 fieldset {
     border: 2px solid rgb(187, 143, 33);
     border-radius: 15px;
