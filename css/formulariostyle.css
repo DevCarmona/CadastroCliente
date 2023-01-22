@@ -1,0 +1,65 @@
+body {    
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../img/bg.versus.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+fieldset {
+    border: 2px solid rgb(187, 143, 33);
+}
+
+legend {
+    border: 1px solid rgb(187, 143, 33);
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(187, 143, 33);
+    border-radius: 5px;    
+}
+
+.box {
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    width: 400px;
+
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-user {
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgb(187, 143, 33);
+    outline: none;
+    color: aliceblue;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.label-input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+
+}
+
+.input-user:focus ~.label-input, .input-user:valid ~.label-input {
+    padding-top: 5px;
+    top: -20px;
+    font-size: 12px;
+    color: rgb(187, 143, 33);
+}

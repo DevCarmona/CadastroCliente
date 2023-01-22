@@ -1,11 +1,11 @@
 body {    
-    height: 100vh;
     background-color: black;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(../img/bg.versus.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .tela-login {
@@ -34,7 +34,7 @@ h1 {
 }
 
 .botao-enviar {
-    background-color: chocolate;
+    background-color: rgb(214, 162, 32);
     border: none;
     padding: 15px;
     width: 100%;
@@ -45,6 +45,7 @@ h1 {
 }
 
 .botao-enviar:hover {
-    background-color: coral;
+    background-color: rgb(131, 95, 5);
     cursor: pointer;
+    transition: 0.2s;
 }
