@@ -34,7 +34,7 @@ h1 {
 }
 
 .botao-enviar {
-    background-color: rgb(214, 162, 32);
+    background-color: rgb(187, 143, 33);
     border: none;
     padding: 15px;
     width: 100%;
@@ -45,7 +45,7 @@ h1 {
 }
 
 .botao-enviar:hover {
-    background-color: rgb(131, 95, 5);
+    background-color: rgb(99, 72, 5);
     cursor: pointer;
     transition: 0.2s;
 }
