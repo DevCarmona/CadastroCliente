@@ -1,4 +1,14 @@
 <?php
+    session_start();
+// print_r($_SESSION);
+    if ((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true)) {
+        unset($_SESSION['nome']);
+        unset($_SESSION['senha']);
+        header('Location: home.php');
+}
+
+$logado = $_SESSION['nome'];
+
     if (isset($_POST['submit'])) 
     {
         // print_r('Nome: ' . $_POST['nome']);
@@ -21,6 +31,7 @@
     include_once(('config.php'));
 
     $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
     $email = $_POST['email'];
     $telefone = $_POST['tel'];
     $sexo = $_POST['genero'];
@@ -29,9 +40,8 @@
     $estado = $_POST['estado'];
     $logradouro = $_POST['logradouro'];
 
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,sexo,data_nasc,cidade,estado,logradouro) VALUES ('$nome','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$logradouro')");
+    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,sexo,data_nasc,cidade,estado,logradouro) VALUES ('$nome','$senha','$email','$telefone','$sexo','$data_nasc','$cidade','$estado','$logradouro')");
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +51,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <title>Cadastro de Clientes</title>
 
@@ -61,6 +73,7 @@
             font-size: 15px;
             font-weight: bold;
             border: none;
+            margin: 5px;
             padding: 10px;
             border-radius: 10px;
         }
@@ -74,14 +87,15 @@
         fieldset {
             border: 2px solid rgb(187, 143, 33);
             border-radius: 15px;
+            padding: 15px;
         }
 
         legend {
             border: 1px solid rgb(187, 143, 33);
-            padding: 5px;
+            padding: 2px;
             text-align: center;
             background-color: rgb(187, 143, 33);
-            border-radius: 5px;
+            border-radius: 15px;
         }
 
         .box {
@@ -156,12 +170,13 @@
 </head>
 
 <body>
-    <a href="escolha.html"><button class="botao-voltar">Voltar</button></a>
+    <!-- Botao de voltar a página -->
+    <a href="escolha.php"><button class="botao-voltar">Voltar</button></a>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
                 <legend><b>Cadastrar Cliente</b></legend>
-                <br>
+                <br><br>
                 <div class="input-box">
                     <input type="text" name="nome" id="nome" class="input-user" required>
                     <label for="nome" class="label-input">Nome Completo</label>
@@ -176,6 +191,7 @@
                     <input type="number" name="tel" id="tel" class="input-user" required>
                     <label for="nome" class="label-input">Telefone</label>
                 </div>
+                <br>
                 <p>Sexo:</p>
                 <input type="radio" name="genero" id="feminino" value="Feminino" required>
                 <label for="feminino">Feminino</label>
