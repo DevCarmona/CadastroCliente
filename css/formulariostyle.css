@@ -89,24 +89,12 @@ legend {
     color: rgb(187, 143, 33);
 }
 
-.botao{
+#submit {
+    background-image: rgb(187, 143, 33);
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
-.botao-enviar {
-    background-color: rgb(187, 143, 33);
-    border: none;
-    padding: 15px;
-    width: 50%;
-    border-radius: 10px;
-    color: aliceblue;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.botao-enviar:hover {
+#submit:hover {
     background-color: rgb(99, 72, 5);
     cursor: pointer;
     transition: 0.2s;

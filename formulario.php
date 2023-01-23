@@ -1,3 +1,12 @@
+<?php
+    if(isset($_POST['submit']))
+    {
+        print_r($_POST['nome']);
+        print_r($_POST['email']);
+        print_r($_POST['tel']);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +22,7 @@
 <body>
     <a href="escolha.html"><button class="botao-voltar">Voltar</button></a>
     <div class="box">
-        <form action="">
+        <form action="formulario.php" method="POST">
             <fieldset>
                 <legend><b>Cadastrar Cliente</b></legend>
                 <br>
@@ -59,9 +68,8 @@
                    <label for="logradouro" class="label-input">Logradouro</label> 
                 </div>
                 <br>
-                <div class="botao">
-                    <button class="botao-enviar">Enviar</button>
-                </div>
+
+                <input type="submit" name="submit" id="submit" >
             </fieldset>
         </form>
     </div>
