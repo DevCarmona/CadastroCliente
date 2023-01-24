@@ -1,13 +1,13 @@
 <?php
 session_start();
+include_once('config.php');
 // print_r($_SESSION);
-if ((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true)) {
+if ((!isset($_SESSION['nome']) == true) and (!isset($_SESSION['senha']) == true)) 
+{
   unset($_SESSION['nome']);
   unset($_SESSION['senha']);
   header('Location: home.php');
 }
-
-$logado = $_SESSION['nome'];
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +87,9 @@ $logado = $_SESSION['nome'];
   <div class="tela">
     <a href="formulario.php"><button class="botao">Cadastrar Clientes</button></a>
     <br /><br /><br />
-    <a href="#"><button class="botao">Buscar Clientes</button></a>
+    <a href="clientes.php"><button class="botao">Buscar Clientes</button></a>
+  </div>
+  <div>
   </div>
 </body>
 </html>

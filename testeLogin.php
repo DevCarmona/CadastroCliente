@@ -23,7 +23,7 @@ session_start();
         {
             unset($_SESSION['nome']);
             unset($_SESSION['senha']);
-            header('Location:home.php');
+            header('Location: home.php');
         }
         else
         {
