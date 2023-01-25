@@ -1,5 +1,5 @@
 <?php
-    // Se nao estiver vazio
+
     if (!empty($_GET['id'])) 
     {
 
@@ -16,8 +16,8 @@
             while($user_data = mysqli_fetch_assoc($result))
             {
                 $nome = $user_data['nome'];
-                $email = $user_data['email'];
                 $senha = $user_data['senha'];
+                $email = $user_data['email'];
                 $telefone = $user_data['telefone'];
                 $sexo = $user_data['sexo'];
                 $data_nasc = $user_data['data_nasc'];
@@ -28,9 +28,8 @@
         }
         else
         {
-            header('Location: escolha.php');
+            header('Location: home.php');
         }
-
 
     }
 ?>
@@ -172,12 +171,11 @@
                     <input type="text" name="nome" id="nome" class="input-user" value="<?php echo $nome?>" required>
                     <label for="nome" class="label-input">Nome Completo</label>
                 </div>
-                <br> 
-                <div class="input-box">
-                    <input type="password" name="senha" id="senha" class="input-user" required>
+                <div hidden class="input-box" >
+                    <input type="text" name="senha" id="senha" class="input-user" value="<?php echo $senha?>">
                     <label for="senha" class="label-input">Senha</label>
                 </div>
-                <br>               
+                <br>
                 <div class="input-box">
                     <input type="text" name="email" id="email" class="input-user" value="<?php echo $email?>" required>
                     <label for="nome" class="label-input">Email</label>
@@ -189,13 +187,13 @@
                 </div>
                 <br>
                 <p>Sexo:</p>
-                <input type="radio" name="genero" id="feminino" value="feminino" <?php echo ($sexo == 'feminino') ? 'checked' : '' ?> required>
+                <input type="radio" id="feminino" name="genero"  value="Feminino" <?php echo ($sexo == 'feminino') ? 'checked' : '' ?> required>
                 <label for="feminino">Feminino</label>
                 <br>
-                <input type="radio" name="genero" id="masculino" value="masculino" <?php echo ($sexo == 'masculino') ? 'checked' : '' ?> required>
+                <input type="radio" id="masculino" name="genero"  value="Masculino" <?php echo ($sexo == 'masculino') ? 'checked' : '' ?> required>
                 <label for="masculino">Masculino</label>
                 <br>
-                <input type="radio" name="genero" id="outro" value="outro" <?php echo ($sexo == 'outro') ? 'checked' : '' ?> required>
+                <input type="radio" id="outro" name="genero"  value="Outro" <?php echo ($sexo == 'outro') ? 'checked' : '' ?> required>
                 <label for="outro">Outro</label>
                 <br><br>
                 <label for="data-nascimento"><b>Data de Nascimento:</b></label>
@@ -216,7 +214,7 @@
                     <label for="logradouro" class="label-input">Logradouro</label>
                 </div>
                 <br>
-                <input type="hidden" name="id" value="<?php echo $id?>">
+                <input type="hidden" name="id" value="<?php echo $id ?>">
                 <input type="submit" name="update" id="update">
             </fieldset>
         </form>

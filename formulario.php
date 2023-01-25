@@ -15,8 +15,8 @@ $logado = $_SESSION['nome'];
     include_once(('config.php'));
 
         $nome = $_POST['nome'];
-        $email = $_POST['email'];
         $senha = $_POST['senha'];
+        $email = $_POST['email'];
         $telefone = $_POST['telefone'];
         $sexo = $_POST['genero'];
         $data_nasc = $_POST['data_nascimento'];
@@ -165,9 +165,8 @@ $logado = $_SESSION['nome'];
                     <input type="text" name="nome" id="nome" class="input-user" required>
                     <label for="nome" class="label-input">Nome Completo</label>
                 </div>
-                <br>
-                <div class="input-box">
-                    <input type="password" name="senha" id="senha" class="input-user" required>
+                <div hidden class="input-box">
+                    <input type="password" name="senha" id="senha" class="input-user">
                     <label for="senha" class="label-input">Senha</label>
                 </div>
                 <br>
@@ -182,16 +181,16 @@ $logado = $_SESSION['nome'];
                 </div>
                 <br>
                 <p>Sexo:</p>
-                <input type="radio" name="genero" id="feminino" value="Feminino" required>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
                 <label for="feminino">Feminino</label>
                 <br>
-                <input type="radio" name="genero" id="masculino" value="Masculino" required>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
                 <label for="masculino">Masculino</label>
                 <br>
-                <input type="radio" name="genero" id="outro" value="Outro" required>
+                <input type="radio" id="outro" name="genero" value="outro" required>
                 <label for="outro">Outro</label>
                 <br><br>
-                <label for="data-nascimento"><b>Data de Nascimento:</b></label>
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
                 <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br><br>
                 <div class="input-box">
@@ -215,5 +214,4 @@ $logado = $_SESSION['nome'];
         </form>
     </div>
 </body>
-
 </html>
